@@ -1,0 +1,140 @@
+# Configuración por defecto para el Generador de Arte Fractal
+# ==========================================================
+
+# Parámetros generales de renderizado
+rendering:
+  # Resolución por defecto
+  default_width: 1200
+  default_height: 900
+  
+  # Calidad y rendimiento
+  default_max_iter: 100
+  high_quality_iter: 300
+  preview_iter: 50
+  
+  # Formato de salida
+  default_dpi: 150
+  image_format: "png"  # png, jpg, svg
+  compression_quality: 95  # Para JPEG
+
+# Configuración de zoom y exploración
+exploration:
+  default_zoom: 1.0
+  max_zoom: 10000.0
+  zoom_step_factor: 2.0
+  
+  # Centros interesantes para explorar
+  interesting_points:
+    mandelbrot:
+      seahorse_valley: [-0.75, 0.11]
+      spiral: [-0.761574, -0.0847596] 
+      mini_mandelbrot: [-0.7269, 0.1889]
+      elephant_valley: [0.25, 0.0]
+    julia:
+      classic_center: [0.0, 0.0]
+      offset_view: [0.5, 0.3]
+
+# Esquemas de colores predefinidos
+colormaps:
+  # Colormaps cálidos
+  warm:
+    - "hot"
+    - "plasma" 
+    - "inferno"
+    - "magma"
+  
+  # Colormaps fríos
+  cool:
+    - "viridis"
+    - "cool"
+    - "winter"
+    - "blues"
+  
+  # Colormaps artísticos
+  artistic:
+    - "rainbow"
+    - "hsv"
+    - "spring"
+    - "summer"
+  
+  # Colormaps clásicos
+  classic:
+    - "gray"
+    - "bone"
+    - "copper"
+    - "seismic"
+
+# Presets de calidad
+quality_presets:
+  preview:
+    width: 400
+    height: 300
+    max_iter: 50
+    dpi: 72
+    
+  standard:
+    width: 800
+    height: 600
+    max_iter: 100
+    dpi: 100
+    
+  high:
+    width: 1920
+    height: 1080
+    max_iter: 200
+    dpi: 150
+    
+  ultra:
+    width: 3840
+    height: 2160
+    max_iter: 500
+    dpi: 300
+    
+  print:
+    width: 3000
+    height: 2000
+    max_iter: 300
+    dpi: 300
+
+# Configuración de archivos de salida
+output:
+  # Estructura de nombres de archivo
+  filename_template: "{type}_{preset}_{timestamp}"
+  timestamp_format: "%Y%m%d_%H%M%S"
+  
+  # Organización de carpetas
+  organize_by_date: true
+  organize_by_type: true
+  
+  # Metadatos a incluir en archivos
+  save_metadata: true
+  metadata_format: "yaml"  # yaml, json
+
+# Configuración avanzada de algoritmos
+algorithms:
+  # Optimizaciones Numba
+  numba:
+    parallel: true
+    fastmath: true
+    cache: true
+  
+  # Criterios de escape
+  escape_radius: 2.0
+  
+  # Límites de seguridad
+  max_iterations_limit: 1000
+  max_resolution_limit: 8192
+
+# Configuración de la interfaz de línea de comandos
+cli:
+  # Verbosidad por defecto
+  default_verbose: true
+  
+  # Progreso
+  show_progress_bar: true
+  progress_update_interval: 100000  # píxeles
+  
+  # Validación de parámetros
+  validate_inputs: true
+  warn_on_high_memory: true
+  memory_warning_threshold: 1000000000  # bytes (1GB)
