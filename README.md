@@ -123,11 +123,6 @@ Python 3.8+    # Versión mínima requerida
    python main.py info
    ```
 
-### 🐳 Instalación con Docker (Próximamente)
-```bash
-docker run -v $(pwd)/output:/app/output dvchinx/fractal-gallery mandelbrot
-```
-
 ## ⚡ Inicio Rápido
 
 ```bash
